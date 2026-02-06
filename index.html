@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tải video TikTok, Facebook Reels, Instagram Reels, YouTube, Douyin không logo, chất lượng cao - Miễn phí">
+    <meta name="keywords" content="tải video tiktok, download video, no watermark, không logo, facebook reels, instagram reels, youtube downloader">
+    <title>Video Downloader - Tải Video Không Logo Chất Lượng Cao</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Custom Styles -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .platform-card {
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .platform-card:hover {
+            transform: translateY(-5px);
+            border-color: #667eea;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+        
+        .loader {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #667eea;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: .5; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    
+    <!-- Header -->
+    <header class="gradient-bg text-white py-6 shadow-lg">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <i class="fas fa-download text-3xl"></i>
+                    <h1 class="text-2xl md:text-3xl font-bold">VideoDownloader</h1>
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#features" class="hover:text-gray-200 transition">Tính năng</a>
+                    <a href="#how-to" class="hover:text-gray-200 transition">Hướng dẫn</a>
+                    <a href="#faq" class="hover:text-gray-200 transition">FAQ</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="py-12 md:py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-10">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 gradient-text">
+                    Tải Video Không Logo
+                </h2>
+                <p class="text-gray-600 text-lg md:text-xl max-w-2xl mx-auto">
+                    Tải video từ TikTok, Facebook, Instagram, YouTube, Douyin với chất lượng cao, không có logo
+                </p>
+            </div>
+
+            <!-- Supported Platforms -->
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-4 mb-12 max-w-4xl mx-auto">
+                <div class="platform-card bg-white rounded-lg p-4 text-center shadow-md">
+                    <i class="fab fa-tiktok text-4xl mb-2" style="color: #000000;"></i>
+                    <p class="font-semibold text-sm">TikTok</p>
+                </div>
+                <div class="platform-card bg-white rounded-lg p-4 text-center shadow-md">
+                    <i class="fab fa-facebook text-4xl mb-2" style="color: #1877f2;"></i>
+                    <p class="font-semibold text-sm">Facebook</p>
+                </div>
+                <div class="platform-card bg-white rounded-lg p-4 text-center shadow-md">
+                    <i class="fab fa-instagram text-4xl mb-2" style="color: #E4405F;"></i>
+                    <p class="font-semibold text-sm">Instagram</p>
+                </div>
+                <div class="platform-card bg-white rounded-lg p-4 text-center shadow-md">
+                    <i class="fab fa-youtube text-4xl mb-2" style="color: #FF0000;"></i>
+                    <p class="font-semibold text-sm">YouTube</p>
+                </div>
+                <div class="platform-card bg-white rounded-lg p-4 text-center shadow-md">
+                    <i class="fas fa-video text-4xl mb-2" style="color: #ff6b6b;"></i>
+                    <p class="font-semibold text-sm">Douyin</p>
+                </div>
+            </div>
+
+            <!-- Download Form -->
+            <div class="max-w-3xl mx-auto">
+                <div class="bg-white rounded-2xl shadow-xl p-6 md:p-8">
+                    <form id="downloadForm" class="space-y-6">
+                        <!-- URL Input -->
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">
+                                <i class="fas fa-link mr-2"></i>Dán link video vào đây
+                            </label>
+                            <input 
+                                type="text" 
+                                id="videoUrl" 
+                                placeholder="https://www.tiktok.com/@user/video/123456789..."
+                                class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-purple-500 focus:outline-none transition"
+                                required
+                            >
+                        </div>
+
+                        <!-- Quality Select -->
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">
+                                <i class="fas fa-sliders-h mr-2"></i>Chất lượng video
+                            </label>
+                            <select 
+                                id="quality" 
+                                class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-purple-500 focus:outline-none transition"
+                            >
+                                <option value="best">Tốt nhất (HD)</option>
+                                <option value="1080p">1080p</option>
+                                <option value="720p">720p</option>
+                                <option value="480p">480p</option>
+                                <option value="360p">360p</option>
+                            </select>
+                        </div>
+
+                        <!-- Download Button -->
+                        <button 
+                            type="submit" 
+                            id="downloadBtn"
+                            class="w-full gradient-bg text-white font-bold py-4 rounded-lg hover:opacity-90 transition-all transform hover:scale-105 shadow-lg"
+                        >
+                            <i class="fas fa-download mr-2"></i>Tải Video Ngay
+                        </button>
+                    </form>
+
+                    <!-- Loading State -->
+                    <div id="loadingState" class="hidden text-center py-8">
+                        <div class="loader mx-auto mb-4"></div>
+                        <p class="text-gray-600 font-semibold">Đang xử lý video...</p>
+                        <p class="text-sm text-gray-500 mt-2">Vui lòng đợi trong giây lát</p>
+                    </div>
+
+                    <!-- Result Section -->
+                    <div id="resultSection" class="hidden mt-8 fade-in">
+                        <div class="border-t-2 border-gray-200 pt-6">
+                            <h3 class="text-xl font-bold mb-4 flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                Video đã sẵn sàng!
+                            </h3>
+                            
+                            <!-- Video Preview -->
+                            <div id="videoPreview" class="bg-gray-100 rounded-lg p-4 mb-4">
+                                <div class="flex flex-col md:flex-row gap-4">
+                                    <img id="videoThumbnail" src="" alt="Thumbnail" class="w-full md:w-48 h-auto rounded-lg">
+                                    <div class="flex-1">
+                                        <h4 id="videoTitle" class="font-bold text-lg mb-2"></h4>
+                                        <div class="space-y-1 text-sm text-gray-600">
+                                            <p><i class="fas fa-user mr-2"></i><span id="videoAuthor"></span></p>
+                                            <p><i class="fas fa-clock mr-2"></i><span id="videoDuration"></span></p>
+                                            <p><i class="fas fa-hdd mr-2"></i><span id="videoSize"></span></p>
+                                            <p><i class="fas fa-tv mr-2"></i><span id="videoQuality"></span></p>
+                                            <p><i class="fas fa-check mr-2 text-green-500"></i><span class="text-green-600 font-semibold">Không có logo</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Download Button -->
+                            <a 
+                                id="downloadLink" 
+                                href="#" 
+                                target="_blank"
+                                class="block w-full text-center gradient-bg text-white font-bold py-4 rounded-lg hover:opacity-90 transition-all shadow-lg"
+                            >
+                                <i class="fas fa-download mr-2"></i>Tải Video Xuống
+                            </a>
+
+                            <!-- Tips -->
+                            <div class="mt-4 bg-blue-50 border-l-4 border-blue-500 p-4 rounded">
+                                <p class="text-sm text-blue-700">
+                                    <i class="fas fa-info-circle mr-2"></i>
+                                    <strong>Mẹo:</strong> Nhấp chuột phải vào nút "Tải Video Xuống" và chọn "Save video as..." để tải về máy.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Error Message -->
+                    <div id="errorMessage" class="hidden mt-6 bg-red-50 border-l-4 border-red-500 p-4 rounded fade-in">
+                        <div class="flex">
+                            <i class="fas fa-exclamation-circle text-red-500 mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-bold text-red-800">Có lỗi xảy ra</h4>
+                                <p id="errorText" class="text-sm text-red-700 mt-1"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 gradient-text">Tính Năng Nổi Bật</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center p-6">
+                    <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-ban text-purple-600 text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2">Không Logo</h3>
+                    <p class="text-gray-600">Tải video gốc không có watermark từ tất cả các nền tảng</p>
+                </div>
+                <div class="text-center p-6">
+                    <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-hd text-purple-600 text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2">Chất Lượng Cao</h3>
+                    <p class="text-gray-600">Hỗ trợ tải video HD, Full HD, thậm chí 4K</p>
+                </div>
+                <div class="text-center p-6">
+                    <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-bolt text-purple-600 text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2">Siêu Nhanh</h3>
+                    <p class="text-gray-600">Xử lý và tải video trong vài giây với công nghệ tối ưu</p>
+                </div>
+                <div class="text-center p-6">
+                    <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-shield-alt text-purple-600 text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2">An Toàn</h3>
+                    <p class="text-gray-600">Không lưu trữ video, bảo mật thông tin người dùng</p>
+                </div>
+                <div class="text-center p-6">
+                    <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-mobile-alt text-purple-600 text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2">Mọi Thiết Bị</h3>
+                    <p class="text-gray-600">Hoạt động tốt trên máy tính, điện thoại, tablet</p>
+                </div>
+                <div class="text-center p-6">
+                    <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-dollar-sign text-purple-600 text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2">Miễn Phí</h3>
+                    <p class="text-gray-600">Hoàn toàn miễn phí, không giới hạn số lượng tải</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How To Section -->
+    <section id="how-to" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 gradient-text">Cách Sử Dụng</h2>
+            <div class="max-w-3xl mx-auto">
+                <div class="space-y-6">
+                    <div class="flex items-start bg-white p-6 rounded-lg shadow-md">
+                        <div class="bg-purple-600 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold mr-4 flex-shrink-0">1</div>
+                        <div>
+                            <h3 class="font-bold text-lg mb-2">Sao chép link video</h3>
+                            <p class="text-gray-600">Mở TikTok/Facebook/Instagram/YouTube, tìm video bạn muốn tải, nhấn nút Chia sẻ và Copy link</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start bg-white p-6 rounded-lg shadow-md">
+                        <div class="bg-purple-600 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold mr-4 flex-shrink-0">2</div>
+                        <div>
+                            <h3 class="font-bold text-lg mb-2">Dán link vào ô trên</h3>
+                            <p class="text-gray-600">Quay lại trang này, dán link video vào ô input và chọn chất lượng bạn muốn</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start bg-white p-6 rounded-lg shadow-md">
+                        <div class="bg-purple-600 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold mr-4 flex-shrink-0">3</div>
+                        <div>
+                            <h3 class="font-bold text-lg mb-2">Tải video về máy</h3>
+                            <p class="text-gray-600">Nhấn nút "Tải Video Ngay", đợi vài giây và nhấn "Tải Video Xuống" để lưu vào máy</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 gradient-text">Câu Hỏi Thường Gặp</h2>
+            <div class="max-w-3xl mx-auto space-y-4">
+                <details class="bg-gray-50 p-6 rounded-lg shadow-md">
+                    <summary class="font-bold cursor-pointer">Video có bị mất chất lượng không?</summary>
+                    <p class="mt-3 text-gray-600">Không, chúng tôi tải video gốc trực tiếp từ server của nền tảng, không qua xử lý nên chất lượng giữ nguyên 100%.</p>
+                </details>
+                <details class="bg-gray-50 p-6 rounded-lg shadow-md">
+                    <summary class="font-bold cursor-pointer">Có giới hạn số lượng video tải không?</summary>
+                    <p class="mt-3 text-gray-600">Không, bạn có thể tải không giới hạn. Tuy nhiên có rate limit 30 requests/phút để tránh spam.</p>
+                </details>
+                <details class="bg-gray-50 p-6 rounded-lg shadow-md">
+                    <summary class="font-bold cursor-pointer">Tại sao video không có logo TikTok?</summary>
+                    <p class="mt-3 text-gray-600">Video gốc trên server TikTok không có watermark. Chỉ khi tải qua app TikTok mới bị thêm logo. Chúng tôi lấy trực tiếp video gốc.</p>
+                </details>
+                <details class="bg-gray-50 p-6 rounded-lg shadow-md">
+                    <summary class="font-bold cursor-pointer">Có an toàn không?</summary>
+                    <p class="mt-3 text-gray-600">Hoàn toàn an toàn. Chúng tôi không lưu trữ video hay thông tin cá nhân. Video được tải trực tiếp từ server gốc.</p>
+                </details>
+                <details class="bg-gray-50 p-6 rounded-lg shadow-md">
+                    <summary class="font-bold cursor-pointer">Có thể tải video riêng tư không?</summary>
+                    <p class="mt-3 text-gray-600">Không, chỉ có thể tải video công khai. Video riêng tư cần đăng nhập và không thể truy cập qua link.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p class="mb-4">© 2024 VideoDownloader. All rights reserved.</p>
+            <p class="text-sm text-gray-400">Made with <i class="fas fa-heart text-red-500"></i> for video lovers</p>
+            <div class="mt-4 space-x-4">
+                <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // API URL - Always use localhost for local development
+        const API_URL = 'http://localhost:8000';
+        
+        const form = document.getElementById('downloadForm');
+        const videoUrlInput = document.getElementById('videoUrl');
+        const qualitySelect = document.getElementById('quality');
+        const downloadBtn = document.getElementById('downloadBtn');
+        const loadingState = document.getElementById('loadingState');
+        const resultSection = document.getElementById('resultSection');
+        const errorMessage = document.getElementById('errorMessage');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const url = videoUrlInput.value.trim();
+            const quality = qualitySelect.value;
+            
+            if (!url) {
+                showError('Vui lòng nhập link video');
+                return;
+            }
+            
+            // Reset states
+            hideAll();
+            showLoading();
+            
+            try {
+                const response = await fetch(`${API_URL}/api/download`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ url, quality })
+                });
+                
+                const data = await response.json();
+                
+                if (!response.ok) {
+                    throw new Error(data.detail || 'Có lỗi xảy ra');
+                }
+                
+                if (data.success) {
+                    showResult(data);
+                } else {
+                    throw new Error('Không thể tải video');
+                }
+                
+            } catch (error) {
+                console.error('Error:', error);
+                showError(error.message);
+            }
+        });
+        
+        function showLoading() {
+            downloadBtn.classList.add('hidden');
+            loadingState.classList.remove('hidden');
+        }
+        
+        function hideAll() {
+            downloadBtn.classList.remove('hidden');
+            loadingState.classList.add('hidden');
+            resultSection.classList.add('hidden');
+            errorMessage.classList.add('hidden');
+        }
+        
+        function showResult(data) {
+            hideAll();
+            
+            // Update video info
+            document.getElementById('videoThumbnail').src = data.thumbnail || 'https://via.placeholder.com/300x169?text=No+Thumbnail';
+            document.getElementById('videoTitle').textContent = data.title;
+            document.getElementById('videoAuthor').textContent = data.author || 'Unknown';
+            document.getElementById('videoDuration').textContent = formatDuration(data.duration);
+            document.getElementById('videoSize').textContent = formatSize(data.file_size);
+            document.getElementById('videoQuality').textContent = `${data.quality} - ${data.format.toUpperCase()}`;
+            document.getElementById('downloadLink').href = data.download_url;
+            
+            resultSection.classList.remove('hidden');
+            resultSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+        
+        function showError(message) {
+            hideAll();
+            document.getElementById('errorText').textContent = message;
+            errorMessage.classList.remove('hidden');
+            errorMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+        
+        function formatDuration(seconds) {
+            if (!seconds) return 'N/A';
+            const mins = Math.floor(seconds / 60);
+            const secs = seconds % 60;
+            return `${mins}:${secs.toString().padStart(2, '0')}`;
+        }
+        
+        function formatSize(bytes) {
+            if (!bytes) return 'N/A';
+            const mb = (bytes / (1024 * 1024)).toFixed(2);
+            return `${mb} MB`;
+        }
+    </script>
+</body>
+</html>
