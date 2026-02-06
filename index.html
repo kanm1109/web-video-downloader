@@ -212,7 +212,7 @@
                             <a 
                                 id="downloadLink" 
                                 href="#" 
-                                target="_blank"
+                                download
                                 class="block w-full text-center gradient-bg text-white font-bold py-4 rounded-lg hover:opacity-90 transition-all shadow-lg"
                             >
                                 <i class="fas fa-download mr-2"></i>Tải Video Xuống
@@ -222,7 +222,7 @@
                             <div class="mt-4 bg-blue-50 border-l-4 border-blue-500 p-4 rounded">
                                 <p class="text-sm text-blue-700">
                                     <i class="fas fa-info-circle mr-2"></i>
-                                    <strong>Mẹo:</strong> Nhấp chuột phải vào nút "Tải Video Xuống" và chọn "Save video as..." để tải về máy.
+                                    <strong>Mẹo:</strong> Video sẽ tự động tải về máy khi bạn click nút "Tải Video Xuống".
                                 </p>
                             </div>
                         </div>
@@ -445,7 +445,30 @@
             document.getElementById('videoDuration').textContent = formatDuration(data.duration);
             document.getElementById('videoSize').textContent = formatSize(data.file_size);
             document.getElementById('videoQuality').textContent = `${data.quality} - ${data.format.toUpperCase()}`;
-            document.getElementById('downloadLink').href = data.download_url;
+            
+            const downloadLink = document.getElementById('downloadLink');
+            downloadLink.href = data.download_url;
+            downloadLink.download = data.title || 'video';
+            
+            // Add click handler to force download
+            downloadLink.onclick = async function(e) {
+                e.preventDefault();
+                try {
+                    const response = await fetch(data.download_url);
+                    const blob = await response.blob();
+                    const url = window.URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = data.title || 'video';
+                    document.body.appendChild(a);
+                    a.click();
+                    window.URL.revokeObjectURL(url);
+                    document.body.removeChild(a);
+                } catch (error) {
+                    // Fallback to direct download
+                    window.location.href = data.download_url;
+                }
+            };
             
             resultSection.classList.remove('hidden');
             resultSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
