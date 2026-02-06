@@ -1,0 +1,10 @@
+app.py
+requirements.txt
+Procfile
+railway.json
+run.py
+test_*.py
+__pycache__
+*.pyc
+.env
+.git
