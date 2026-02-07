@@ -248,6 +248,23 @@ def extract_video_info(url: str, quality: str = 'best') -> Dict:
             }
         })
     
+    elif platform == 'YouTube':
+        ydl_opts.update({
+            'format': get_format_selector(quality, platform),
+            'extractor_args': {
+                'youtube': {
+                    'player_client': ['android', 'web'],
+                    'skip': ['dash', 'hls']
+                }
+            },
+            'http_headers': {
+                'User-Agent': 'com.google.android.youtube/17.36.4 (Linux; U; Android 12; GB) gzip',
+                'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+                'Accept-Language': 'en-us,en;q=0.5',
+                'Accept-Encoding': 'gzip, deflate',
+            },
+        })
+    
     try:
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
             info = ydl.extract_info(url, download=False)
